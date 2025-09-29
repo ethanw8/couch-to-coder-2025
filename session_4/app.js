@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const response = await fetch("http://localhost:3000/recipes");
+    const response =
+        fetch("http://localhost:3000/recipes");
     const recipes = await response.json();
 
     for (recipe of recipes) {
@@ -71,6 +72,31 @@ document.addEventListener("DOMContentLoaded", async () => {
             body: JSON.stringify(newRecipe) // Convert the JSON object to a string
         })
     })
+
+    const cuisineResponse = await fetch("http://localhost:3000/cuisine-data");
+    const cuisineData = await cuisineResponse.json();
+    
+    const xValues = Object.keys(cuisineData);
+    const yValues = Object.values(cuisineData);
+
+    new Chart("myChart", {
+        type: "pie",
+        data: {
+            labels: xValues,
+            datasets: [{
+                data: yValues
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Cuisine Popularity"
+            }
+        }
+    });
+
+
+
 
 
 
