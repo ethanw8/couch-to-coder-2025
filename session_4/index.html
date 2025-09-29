@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>InstantGramen</title>
 </head>
 
@@ -25,6 +26,7 @@
     </header>
     <main>
         <h2>My Favourite Recipes</h2>
+        <canvas id="myChart" style="width:100%;max-width:600px;"></canvas>
         <h3 id="recipe-id">Add a new recipe:</h3>
         <form>
             <div class="form-row"> <label for="name">Name: </label> <input type="text" name="name" id="name"> </div>
